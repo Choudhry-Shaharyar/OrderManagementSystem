@@ -1,0 +1,9 @@
+Zora009,passwords,Zora,Mehmi,6 ecinscircle Rd, Zora28mehmi@hotmail.com.net,9054549334
+Irene009,pass,Irene,Ali,6 Dawes Rd,592819@pdsb.net,9054549334
+Sharry009,password,Sharry,Choudhry,6 Dawes Rd, 592819@pdsb.net,9054549334
+jim009,passwordss,jim,Mehmi,6 Dawes Rd, 592819@pdsb.net,9054549334
+harry009,passwordsss,harry,Mehmi,6 Dawes Rd, 592819@pdsb.net,9054549334
+bil009,123,bil,Mehmi,6 Dawes Rd, 592819@pdsb.net,9054549334
+Andy009,Pakistan1!,Andy,Malik,55 ravenscliffe crt,andy009@yahoo.ca,6477788800
+
+Enter username,Enter password,Enter first name,Enter Last name,Enter address,Enter email,7
