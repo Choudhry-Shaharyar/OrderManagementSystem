@@ -20,7 +20,7 @@ import javax.swing.JTextField;
  *Date: Jan 13, 2020
  *Description: GUI where the user can login. Either a customer or admin can log in.
  *Reads from files to confirm password and username of admin or customer. After Entering login information
- *program opens up the dealership where the user can get a car and book a service. Admin can display information of cars and customer files
+ *program opens up the dealership where the user can get a car and book a service. Admin can display information of cars and customer files.
  */
 
 /*
@@ -40,7 +40,7 @@ public class LogInMenu extends JPanel implements ActionListener {
 	private JButton adminLogin, customerLogin, createNewAcc, createNewAcc2;     
 	private int index;
 	private int index2;
-    int size;
+        int size;
 	private JLabel admLogin, cusLogin;
 	private	BufferedReader fr;
 	public LogInMenu() throws NumberFormatException, IOException {
@@ -95,7 +95,7 @@ public class LogInMenu extends JPanel implements ActionListener {
 		adminUsername.setForeground(black);            
 		add(adminUsername);                             
 
-        customerPassword = new JTextField("Enter password");     
+                customerPassword = new JTextField("Enter password");     
 		customerPassword.setEditable(true);
 		customerPassword.setBounds(310, 170, 180, 35);      
 		customerPassword.setBackground(White);            
@@ -123,7 +123,7 @@ public class LogInMenu extends JPanel implements ActionListener {
 		add(cusLogin);
 		add(admLogin);
 
-      	customerLogin.addActionListener(this);                      
+      		customerLogin.addActionListener(this);                      
 		adminLogin.addActionListener(this); 
 		customerPassword.addActionListener(this);
 		customerUsername.addActionListener(this);
@@ -140,9 +140,9 @@ public class LogInMenu extends JPanel implements ActionListener {
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		JFrame testFrame = new JFrame("SC Dealership.Inc");                              //creates new frame and adds PhraseUI panel
+		JFrame testFrame = new JFrame("SC Dealership.Inc");           //creates new frame and adds PhraseUI panel
 		testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);     //sets frame to exit on close
-		testFrame.getContentPane().add(new LogInMenu());               //adds new panel
+		testFrame.getContentPane().add(new LogInMenu());              //adds new panel
 		testFrame.setSize(540, 500);                                  //sets size location and visible to true
 		testFrame.setLocation(350, 200);
 		testFrame.setVisible(true);
@@ -173,7 +173,7 @@ public class LogInMenu extends JPanel implements ActionListener {
 				customerUsername.setText("Try Again");
 			}
 
-			else if (index >= 0){ // if index is greater than -1 it means the password and username are correct
+			else if (index >= 0){ // if index is equal to or greater than 0 it means the password and username are correct
 
 				JOptionPane.showMessageDialog(null, "Going to Menu GUI....");
 
@@ -185,7 +185,6 @@ public class LogInMenu extends JPanel implements ActionListener {
 					testFrame.add(new DealershipCustomerMenu(index)); 
 					// calling the DealerShipCustumerGUI class so the user can pick a car or book a service
 				} catch (NumberFormatException | IOException e1) {                      
-					// index is given so the computer knows which customer has logged in
 					e1.printStackTrace();
 				}             
 				testFrame.setSize(540, 500);    //sets size, location, and visible to true
@@ -201,7 +200,7 @@ public class LogInMenu extends JPanel implements ActionListener {
 
 			try { // calling verifyLoginUpdated method to see if the username and pin entered is correct and exists
 				index2 = VerifyLogin.verifyLoginUpdated2(username, pin, "AdminInfo.txt");
-                System.out.println(index2);
+               		        System.out.println(index2);
 			} 
 			catch (NumberFormatException e) {
 				e.printStackTrace();
@@ -226,13 +225,13 @@ public class LogInMenu extends JPanel implements ActionListener {
 				try {
 					new adminGUI(index2);
 					testFrame.add(new adminGUI(index2)); // calling the DealerShipCustumerGUI class so the user can pick a car or book a service
-				} catch (NumberFormatException e1) { // index is given so the computer knows which customer has logged
-														// in
-				
+					
+				} catch (NumberFormatException e1) {											
 					e1.printStackTrace();
 
 				} catch (IOException e) {
 					e.printStackTrace();
+				
 				}
 				testFrame.setSize(725, 500);    //sets size, location, and visible to true
 				testFrame.setLocation(350, 200);
@@ -250,10 +249,8 @@ public class LogInMenu extends JPanel implements ActionListener {
 				try {
 					new OpenAccountGUI();
 					testFrame.add(new OpenAccountGUI()); // calling the DealerShipCustumerGUI class so the user can pick a car or book a service
-				} catch (NumberFormatException | IOException e1) {                      // index is given so the computer knows which customer has logged in
-		
+				} catch (NumberFormatException | IOException e1) { 
 					e1.printStackTrace();
-
 				}             
 				testFrame.setSize(540, 500);    //sets size, location, and visible to true
 				testFrame.setLocation(350, 200);
@@ -268,7 +265,7 @@ public class LogInMenu extends JPanel implements ActionListener {
 			try {
 				new OpenAccountGUI();
 				testFrame.add(new NewAdminAcc()); // calling the DealerShipCustumerGUI class so the user can pick a car or book a service
-			} catch (NumberFormatException | IOException e1) {                      // index is given so the computer knows which customer has logged in
+			} catch (NumberFormatException | IOException e1) {  
 	
 				e1.printStackTrace();
 
